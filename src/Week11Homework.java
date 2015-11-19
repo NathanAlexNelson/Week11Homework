@@ -8,7 +8,7 @@ public class Week11Homework {
 		int bounces;
 		int dices;
 		int NDice;
-
+		int n;
 
 		System.out.println("How many dice would you like to throw?");
 		dices = input.nextInt();
@@ -17,13 +17,21 @@ public class Week11Homework {
 		bounces = input.nextInt();
 		
 		Dice Roll = new Dice(bounces,dices);
-		NDice = Roll.getDice();		
+
+		NDice = Roll.getDice();
+		
+		
+		int []Dieroll = Roll.HistD();
+		//int []ArrayH = Roll.getDice();
 /*		Roll2 = Dice.OneThrow();
 
 		
 		System.out.println(Roll2);*/
 		System.out.println(NDice);
-
+		for (n=0;n<= bounces;n++){
+			System.out.println(Arrays.asList(Dieroll[n]));
+		}
+		//System.out.println(Arrays.asList(ArrayH));
 
 		
 /*		for (int N=0; N<=dices; N++){

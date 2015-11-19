@@ -11,30 +11,22 @@ OneThrow = 1 + (int) (Math.random() * 6);
 return OneThrow;
 }
 
-
-
 public void Throw(int bounces, int dices){
 int X = 0;
 int Total = 0;
-int [] History = new int [dices];
-HistoryD = new int [dices];
-int [] BounceH = new int [dices];
 for (int A=1; A <= dices; A++) {
 for (int Y=1; Y <= bounces; Y++){
 X = 1 + (int) (Math.random() * 6);
 Total = Total + X;
-BounceH[Y] = X;
 }
 average = Total/bounces;
 Value = Total;
-History[A] = X;
-HistoryD[A] = History[A];
 }
-System.out.println(Arrays.asList(HistoryD));
 }
 
 public int getDice(){
 return Value;
+//return []HistoryD;
 }
 
 /* public void Throw(int bounces){
@@ -51,13 +43,19 @@ Value = Total;
 public Dice (int bounces, int dices){
 int total = 0, sum = 0;
 Dice Roll = new Dice();
+HistoryD = new int[bounces];
 for (int i = 0; i <= bounces; i++){
 Roll.Throw(bounces, dices);
 total = Roll.Value();
 sum = sum + total;
+HistoryD[i] = total;
 }
 average = sum/bounces;
 Value = total;
+}
+
+public int[] HistD(){
+return HistoryD;
 }
 
 public int Value(){
